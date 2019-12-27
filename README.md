@@ -4,7 +4,7 @@ Basic recruitment application which contains dashboard page with tiles containin
 A Web Application that allows Admin with credential (Admin/Admin@1234)
 - To Login to the App. 
 - Display tiles which shows total number of Job Applicants and seperate tiles for each domain
-- Table view containing each applicant information
+- Table view containing each candidate information
 - Table is supported with pagination with default page size as 5.
 - Side collapsable navigation bar which contains menu items (dashboard/logout)
 
@@ -16,7 +16,7 @@ A Web Application that allows Admin with credential (Admin/Admin@1234)
  <li>HTML 5</li>
  <li>CSS</li>
  <li>Jquery</li>
- <li>TyoeScript</li>
+ <li>TypeScript</li>
 </ul>
  <h2>Running Demo</h2>
  
@@ -39,7 +39,7 @@ A Web Application that allows Admin with credential (Admin/Admin@1234)
  <ul>
  <li> Client side validation done to check if logged user is Admin or not</li>
  <li> Once loggedin, User information is stored in Session storage which will be available until user closes the tab</li>
- <li> If Admin is not logged in. Other pages cannot be accessed. Once accessed directly through URL, It will again redriect to Login page.</li>
+ <li> If Admin is not logged in. Other pages cannot be accessed. When we try to access other pages directly through URL, the application is capable of redriecting to Login page.</li>
  </ul>
 
 <h4>Dashboard</h4>

@@ -1,0 +1,9 @@
+  <div *ngIf="authenticateService.isUserLoggedIn()">
+    <div class="sidebar">
+        <div class="sidebar-nav list-group">          
+          <a class="list-group-item toggleBar" (click) = "toggleSideBar()">Close <i id="arrowicon" class="fa fa-angle-left menu-icon fa-2x" aria-hidden="true"></i></a>
+          <a  routerLink="/dashboard" class="list-group-item active">Dashboard <i class="fa fa-home menu-icon fa-2x" aria-hidden="true"></i></a>
+          <a routerLink="/logout" class="list-group-item" >log out<i class="fa fa-sign-out menu-icon fa-2x" aria-hidden="true"></i></a>          
+        </div>
+    </div>
+</div>

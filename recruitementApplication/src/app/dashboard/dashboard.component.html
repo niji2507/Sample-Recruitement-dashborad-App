@@ -1,0 +1,77 @@
+<div id="page-content">
+  <div class="panel panel-default">
+    <div class="panel-heading" data-toggle="collapse" data-target="#dashboardTiles">Applicants Overview</div>
+    <div class="panel-body">
+      <div id="dashboardTiles" class="row panel-content col-md-12 collapse show">
+        <div class="tile job" style="margin-left:1px">
+          <div class="header">
+            <div class="count"><i class="fa fa-cubes" aria-hidden="true"></i></div>
+            <div class="title">Total Applicants</div>
+          </div>
+          <div class="body">
+            <div class="title">{{totalApplicants}} Candidates</div>
+          </div>
+        </div>
+        <div *ngFor="let applicant of applicantsData | groupBy : 'domain'">
+          <div class="tile job">
+            <div class="header">
+              <div class="count"><i class="fa fa-cube" aria-hidden="true"></i></div>
+              <div class="title">{{applicant.key}}</div>
+            </div>
+            <div class="body">
+              <div class="title">{{applicant.value.length}} Candidates</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" data-toggle="collapse" data-target="#dashboardTable">Scheduled List</div>
+    <div class="table-panel-body">
+      <div id="dashboardTable" class="row panel-content col-md-12 collapse show">
+        <table style="margin-left:1px;margin-top:5px" class="table table-striped">
+          <thead class="nav-blue">
+            <tr>
+              <th scope="col">#Candidate ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Domain</th>
+              <th scope="col">Years of Exp.</th>
+              <th scope="col">Recriuter Name</th>
+              <th scope="col">Interview Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let applicant of paginatedData">
+              <td>{{applicant.candidateId}}</td>
+              <td>{{applicant.name}}</td>
+              <td>{{applicant.domain}}</td>
+              <td>{{applicant.yearOfExperience}}</td>
+              <td>{{applicant.recruiterName}}</td>
+              <td>{{applicant.interviewType}}</td>
+          </tbody>
+          <tfoot class="page-table" style="background-color: #f2f2f2;width:100%">
+            <tr>
+              <td colspan="6">Showing {{currentIndex}} - {{lastIndex}} of {{totalApplicants}}
+                <ng-container *ngIf="showPrevButton()"><span><button type="button" (click) ="gotoPrevPage()" class="btn btn-default">
+            <i class="fa fa-angle-left" aria-hidden="true"></i></button></span>
+                </ng-container>
+                <ng-container *ngIf="showNextButton()"><span><button  style="margin-left: 5px"  type="button" (click) ="gotoNextPage()" class="btn btn-default">
+           <i class="fa fa-angle-right" aria-hidden="true"></i></button></span>
+                </ng-container>
+                <span style="margin-left:50px">
+            <span>Page size:</span>
+                <select style="margin-left:10px" id="page_size" [(ngModel)]="pageSize" (change)="updatePageSize()">
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="20">20</option>
+            </select>
+                </span>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

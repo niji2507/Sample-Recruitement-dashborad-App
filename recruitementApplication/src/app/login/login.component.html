@@ -1,0 +1,16 @@
+<div class="login">
+  <h1>Login to Application</h1>
+  <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}}</div>
+  <form class="form-group" [formGroup]="loginForm">
+    <label>
+    Username:
+    <input class="form-control" type="text" formControlName="username">
+  </label>
+    <br>
+    <label>
+    Password:
+    <input class="form-control" type="password" formControlName="password">
+  </label>
+  </form>
+  <button (click)="doLogin()" [disabled]="!loginForm.valid" class="btn btn-success">Login</button>
+</div>

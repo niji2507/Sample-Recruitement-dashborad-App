@@ -1,0 +1,12 @@
+<header>
+  <nav class="navbar navbar-fixed-top navbar-expand-md navbar-dark nav-blue">
+    <div style="-webkit-text-fill-color:white ">
+      Recruitment Dashboard
+    </div>
+    <ul class="navbar-nav navbar-collapse justify-content-end">
+      <li><a *ngIf="!authenticateService.isUserLoggedIn()" routerLink="/login" class="nav-link">Login</a></li>
+      <li style="color:white">{{authenticateService.getLoggedInUserName()}} <i class="fa fa-user-circle" aria-hidden="true"></i></li>
+    </ul>
+  </nav>
+</header>
+    
